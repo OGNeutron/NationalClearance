@@ -1,0 +1,103 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+// datasource db {
+//   provider = "sqlite"
+//   url = "***"
+// }
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Bookings {
+  id Int @id @default(autoincrement())
+  weeks Week[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Week {
+  id Int @id @default(autoincrement())
+  days Days
+  anchor String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Days {
+  id Int @id @default(autoincrement())
+  monday Monday @relation("monday-times")
+  tuesday Tuesday @relation("tuesday-times")
+  wednesday Wednesday @relation("wednesday-times")
+  thursday Thursday @relation("thursday-times")
+  friday Friday @relation("friday-times")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  // monday Day @relation("monday-times")
+  // tuesday Day @relation("tuesday-times")
+  // wednesday Day @relation("wednesday-times")
+  // thrusday Day @relation("thrusday-times")
+  // friday Day @relation("friday-times")
+  // @@unique([monday, tuesday, wednesday, thrusday, friday])
+}
+
+model Monday {
+  id Int @id @default(autoincrement())
+  eighttoten Boolean @default(false)
+  tentotwelve Boolean @default(false)
+  twelvetotwo Boolean @default(false)
+  twotofour Boolean @default(false)
+  fourtosix Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Tuesday {
+  id Int @id @default(autoincrement())
+  eighttoten Boolean @default(false)
+  tentotwelve Boolean @default(false)
+  twelvetotwo Boolean @default(false)
+  twotofour Boolean @default(false)
+  fourtosix Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Wednesday {
+  id Int @id @default(autoincrement())
+  eighttoten Boolean @default(false)
+  tentotwelve Boolean @default(false)
+  twelvetotwo Boolean @default(false)
+  twotofour Boolean @default(false)
+  fourtosix Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Thursday {
+  id Int @id @default(autoincrement())
+  eighttoten Boolean @default(false)
+  tentotwelve Boolean @default(false)
+  twelvetotwo Boolean @default(false)
+  twotofour Boolean @default(false)
+  fourtosix Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Friday {
+  id Int @id @default(autoincrement())
+  eighttoten Boolean @default(false)
+  tentotwelve Boolean @default(false)
+  twelvetotwo Boolean @default(false)
+  twotofour Boolean @default(false)
+  fourtosix Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
