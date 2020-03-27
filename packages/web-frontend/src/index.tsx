@@ -9,7 +9,7 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 const apolloClient = new ApolloClient({
-    uri: 'http://localhost:4000/graphql',
+    uri: 'https://national-clearance.herokuapp.com/graphql',
 })
 
 ReactDOM.render(
