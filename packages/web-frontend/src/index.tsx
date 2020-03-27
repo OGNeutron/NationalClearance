@@ -9,7 +9,7 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 const apolloClient = new ApolloClient({
-    uri: 'http://localhost:3000/graphql',
+    uri: 'http://localhost:4000/graphql',
 })
 
 ReactDOM.render(

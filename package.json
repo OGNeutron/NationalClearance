@@ -7,12 +7,20 @@
         "build:server": "npx lerna run build:bash",
         "test:server": "learn run test",
         "new-version": "lerna version --conventional-commits --yes",
-        "diff": "lerna diff"
+        "diff": "lerna diff",
+        "codegen": "graphql-codegen --config codegen.yml"
     },
     "private": true,
     "workspaces": {
         "packages": [
             "packages/*"
         ]
+    },
+    "devDependencies": {
+        "@graphql-codegen/cli": "^1.13.1",
+        "@graphql-codegen/introspection": "1.13.1",
+        "@graphql-codegen/typescript": "1.13.1",
+        "@graphql-codegen/typescript-operations": "1.13.1",
+        "@graphql-codegen/typescript-react-apollo": "1.13.1"
     }
 }

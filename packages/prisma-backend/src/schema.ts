@@ -136,11 +136,21 @@ const Query = objectType({
 
                 console.log('RESPONSE', response)
 
-                return response
+                return response[0]
             },
         })
     },
 })
+
+// const Mutation = objectType({
+//     name: 'Mutation ',
+//     definition(t) {
+//         t.field('updateDay', {
+//           type: 'Days',
+//           args: {},
+//         })
+//     },
+// })
 
 export const schema = makeSchema({
     types: [
